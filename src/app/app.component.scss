@@ -1,0 +1,10 @@
+.header {
+    display: flex;
+    justify-content: center;
+    color: red;
+    &-after {
+        display: flex;
+        justify-content: center;
+        color: green;
+    }
+}
