@@ -12,11 +12,10 @@
 <ng-template #noServer>
     <p> no server was created</p>
 </ng-template>
-<app-server></app-server>
-<app-server></app-server>
+<app-server *ngFor="let server of servers"></app-server>
 <hr>
 <!-- task -->
-<label>username</label>
+<!-- <label>username</label>
 <input type="text" [(ngModel)]="username" (input)="onUsernameUpdate($event)">
 <p>{{username}}</p>
-<button [disabled]="!allowClick" (click)="onRefresh()">Reset user</button>
+<button [disabled]="!allowClick" (click)="onRefresh()">Reset user</button> -->

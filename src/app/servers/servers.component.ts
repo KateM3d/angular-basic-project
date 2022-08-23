@@ -11,6 +11,8 @@ export class ServersComponent implements OnInit {
   serverName = 'test server';
   serverCreated = false;
 
+  servers = ['test-server-1', 'test-server-2', 'test-server-3'];
+
   //
   allowClick = false;
   username = '';
@@ -24,9 +26,10 @@ export class ServersComponent implements OnInit {
   ngOnInit(): void {}
 
   onCreateServer() {
+    this.serverCreated = true;
+    this.servers.push(this.serverName);
     this.serverCreationStatus =
       'Server was created. Name is ' + this.serverName;
-    this.serverCreated = true;
   }
 
   onUpdateServerName(event: Event) {
