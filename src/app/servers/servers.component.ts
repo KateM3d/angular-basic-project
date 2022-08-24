@@ -10,12 +10,15 @@ export class ServersComponent implements OnInit {
   serverCreationStatus = 'no server created';
   serverName = 'test server';
   serverCreated = false;
-
   servers = ['test-server-1', 'test-server-2', 'test-server-3'];
 
-  //
+  //task#1
   allowClick = false;
   username = '';
+
+  //task#2
+  showContent = false;
+  log: number[] = [];
 
   constructor() {
     setTimeout(() => {
@@ -43,5 +46,10 @@ export class ServersComponent implements OnInit {
   onRefresh() {
     this.username = '';
     this.allowClick = false;
+  }
+
+  onShowSecretContent() {
+    this.showContent = !this.showContent;
+    this.log.push(this.log.length + 1);
   }
 }

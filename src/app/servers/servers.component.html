@@ -14,8 +14,16 @@
 </ng-template>
 <app-server *ngFor="let server of servers"></app-server>
 <hr>
-<!-- task -->
+<!-- task#1  -->
 <!-- <label>username</label>
 <input type="text" [(ngModel)]="username" (input)="onUsernameUpdate($event)">
 <p>{{username}}</p>
 <button [disabled]="!allowClick" (click)="onRefresh()">Reset user</button> -->
+
+<!-- task#2  -->
+<button (click)="onShowSecretContent()">Display details</button>
+<p *ngIf="showContent; else hidePass">Secret password = tuna</p>
+<ng-template #hidePass>
+    <p></p>
+</ng-template>
+<div *ngFor="let item of log" [ngStyle]="{backgroundColor: item>=5 ? 'blue' :'transparent'}" [ngClass]="{'white-text': item>=5}">{{item}}</div>
